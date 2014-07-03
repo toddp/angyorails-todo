@@ -13,5 +13,6 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ng-rails-csrf'
   ]);

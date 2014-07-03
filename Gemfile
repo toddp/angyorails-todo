@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 
 gem 'rails-api'
 gem 'foreman'
+gem 'ng-rails-csrf'
