@@ -42,6 +42,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'rails-api'
 gem 'foreman'
 gem 'ng-rails'
+gem 'ng-rails-csrf'
 gem 'bootstrap-sass'
 gem 'devise'
 

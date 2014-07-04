@@ -10,11 +10,11 @@
 ###
 angular
   .module('angularCoffeeApp', [
+    'ngRoute',
     'ngAnimate',
     'ngCookies',
     'ngSanitize',
-    'ngTouch',
-    'ng-route'
+    'ngTouch'
   ])
   .config(['$httpProvider', ($httpProvider) ->
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
