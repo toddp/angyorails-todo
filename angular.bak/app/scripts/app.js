@@ -14,5 +14,8 @@ angular
     'ngCookies',
     'ngSanitize',
     'ngTouch',
-    'ng-rails-csrf'
-  ]);
+    'ng-rails-csrf',
+    'ng-route'
+  ])
+  .config(['$httpProvider', function($httpProvider){
+    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
