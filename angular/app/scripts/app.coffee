@@ -10,11 +10,11 @@
 ###
 angular
   .module('angularCoffeeApp', [
-    'ngRoute',
-    'ngAnimate',
-    'ngCookies',
-    'ngSanitize',
-    'ngTouch',
+    'ngRoute'
+    'ngAnimate'
+    'ngCookies'
+    'ngSanitize'
+    'ngTouch'
     'ui.sortable'
   ])
 
@@ -26,6 +26,6 @@ angular
       .when('/about', { templateUrl: '../views/about.html', controller: 'AboutCtrl' } )
     
     #default route
-    $routeProvider.otherwise({ templateUrl: '../main.html', controller: 'Maintrl' } )
+    $routeProvider.otherwise({ templateUrl: 'views/main.html', controller: 'Maintrl' } )
     console.log('router started')
   ])
