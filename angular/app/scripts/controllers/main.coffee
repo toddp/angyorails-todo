@@ -9,8 +9,10 @@
 ###
 angular.module('angularCoffeeApp')
   .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+    $scope.todos = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+
+    $scope.addTodo = ->
+      console.log($scope.todo)
+      $scope.todos.push($scope.todo)
+      $scope.todo = ''
+      console.log($scope.todos)
