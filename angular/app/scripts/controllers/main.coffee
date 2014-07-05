@@ -9,7 +9,7 @@
 ###
 angular.module('angularCoffeeApp')
   .controller 'MainCtrl', ($scope) ->
-    $scope.todos = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+    $scope.todos = []
 
     $scope.addTodo = ->
       console.log($scope.todo)
