@@ -16,3 +16,6 @@ angular.module('angularCoffeeApp')
       $scope.todos.push($scope.todo)
       $scope.todo = ''
       console.log($scope.todos)
+
+    $scope.removeTodo = (index) ->
+      $scope.todos.splice(index, 1)
