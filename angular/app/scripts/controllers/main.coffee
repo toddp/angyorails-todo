@@ -8,8 +8,12 @@
  # Controller of the angularCoffeeApp
 ###
 angular.module('angularCoffeeApp')
-  .controller 'MainCtrl', ($scope) ->
-    $scope.todos = []
+  .controller 'MainCtrl', ($scope, TodoService) ->
+    #$scope.todos = []
+    #$scope.todos = TodoService().all()
+    todosrv = new TodoService()
+    $scope.todos = todosrv.all()
+    console.log($scope.todos)
 
     $scope.addTodo = ->
       console.log($scope.todo)

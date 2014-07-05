@@ -23,10 +23,14 @@ module.exports = (config) ->
       'bower_components/jquery/dist/jquery.js',
       'bower_components/jquery-ui/jquery-ui.js',
       'bower_components/angular-ui-sortable/sortable.js',
+      'bower_components/angular-resource/angular-resource.js',
+
       'app/scripts/**/*.coffee'
       'test/mock/**/*.coffee'
       'test/spec/**/*.coffee'
     ],
+  #FIXME      'bower_components/ng-resource/dist/ng-resource.js',
+
 
     # list of files / patterns to exclude
     exclude: []
