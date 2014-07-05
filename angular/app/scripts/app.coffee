@@ -14,7 +14,8 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.sortable'
   ])
 
   .config(['$httpProvider', ($httpProvider) ->
