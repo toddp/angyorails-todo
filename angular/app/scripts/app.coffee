@@ -30,6 +30,6 @@ angular
       .when('/about', { templateUrl: '../views/about.html', controller: 'AboutCtrl' } )
     
     #default route
-    $routeProvider.otherwise({ templateUrl: 'views/main.html', controller: 'Maintrl' } )
+    $routeProvider.otherwise({ templateUrl: 'views/main.html', controller: 'MainCtrl' } )
     console.log('router started')
   ])
