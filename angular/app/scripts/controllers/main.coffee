@@ -9,8 +9,13 @@
 ###
 angular.module('angularCoffeeApp')
   .controller 'MainCtrl', ($scope) ->
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate'
-      'AngularJS'
-      'Karma'
-    ]
+    $scope.todos = []
+
+    $scope.addTodo = ->
+      console.log($scope.todo)
+      $scope.todos.push($scope.todo)
+      $scope.todo = ''
+      console.log($scope.todos)
+
+    $scope.removeTodo = (index) ->
+      $scope.todos.splice(index, 1)
