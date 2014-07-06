@@ -23,8 +23,8 @@ angular.module('angularCoffeeApp')
         attrs
 
 
-      destroy: (index) ->
-        new @service(id: index).$delete (todo) ->
+      destroy: (todo) ->
+        new @service(id: todo.id).$delete (todo) ->
           console.log('deleted todo')
 
       all: -> 
