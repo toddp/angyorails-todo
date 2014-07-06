@@ -23,6 +23,15 @@ setup see https://github.com/cyu/rack-cors  or look in application.rb.
     * ng-resource (may not be needed)
     * angular-resource
 
-    It is unclear to me whether ng-resource is absolutely needed, or if
-    angular-resource is sufficient. 
+  It is unclear to me whether ng-resource is absolutely needed, or if
+  angular-resource is sufficient.
 
+Getting started:
+* checkout repo
+* bundle install
+cd angular
+bower install
+grunt test
+grunt serve
+
+angular app will be listening on localhost:9000 ; rails app on localhost:3000
