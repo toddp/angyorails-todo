@@ -47,14 +47,14 @@ describe TodosController do
   end
 
   describe "GET new" do
-    it "assigns a new todo as @todo" do
+    xit "assigns a new todo as @todo" do
       get :new, {}, valid_session
       assigns(:todo).should be_a_new(Todo)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested todo as @todo" do
+    xit "assigns the requested todo as @todo" do
       todo = Todo.create! valid_attributes
       get :edit, {:id => todo.to_param}, valid_session
       assigns(:todo).should eq(todo)
@@ -75,9 +75,9 @@ describe TodosController do
         assigns(:todo).should be_persisted
       end
 
-      it "redirects to the created todo" do
+      it "returns 201 created response" do
         post :create, {:todo => valid_attributes}, valid_session
-        response.should redirect_to(Todo.last)
+        response.status.should be 201
       end
     end
 
@@ -89,11 +89,11 @@ describe TodosController do
         assigns(:todo).should be_a_new(Todo)
       end
 
-      it "re-renders the 'new' template" do
+      it "returns 422 unprocessible entity response" do
         # Trigger the behavior that occurs when invalid params are submitted
         Todo.any_instance.stub(:save).and_return(false)
         post :create, {:todo => { "description" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        response.status.should be 422
       end
     end
   end
@@ -119,7 +119,7 @@ describe TodosController do
       it "redirects to the todo" do
         todo = Todo.create! valid_attributes
         put :update, {:id => todo.to_param, :todo => valid_attributes}, valid_session
-        response.should redirect_to(todo)
+        response.status.should be 204
       end
     end
 
@@ -132,12 +132,12 @@ describe TodosController do
         assigns(:todo).should eq(todo)
       end
 
-      it "re-renders the 'edit' template" do
+      it "returns 422 unprocessible entity response" do
         todo = Todo.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Todo.any_instance.stub(:save).and_return(false)
         put :update, {:id => todo.to_param, :todo => { "description" => "invalid value" }}, valid_session
-        response.should render_template("edit")
+        response.status.should be 422
       end
     end
   end
@@ -150,10 +150,10 @@ describe TodosController do
       }.to change(Todo, :count).by(-1)
     end
 
-    it "redirects to the todos list" do
+    it "return 204 after delete" do
       todo = Todo.create! valid_attributes
       delete :destroy, {:id => todo.to_param}, valid_session
-      response.should redirect_to(todos_url)
+      response.status.should be 204
     end
   end
 

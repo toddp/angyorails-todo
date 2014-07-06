@@ -18,7 +18,8 @@ class TodosController < ApplicationController
   # POST /todos
   # POST /todos.json
   def create
-    @todo = Todo.new(params[:todo])
+    puts "params: %s" , params
+    @todo = Todo.new(allowed_params)
 
     if @todo.save
       render json: @todo, status: :created, location: @todo
@@ -32,7 +33,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
 
-    if @todo.update(params[:todo])
+    if @todo.update(allowed_params)
       head :no_content
     else
       render json: @todo.errors, status: :unprocessable_entity
@@ -47,4 +48,12 @@ class TodosController < ApplicationController
 
     head :no_content
   end
+
+  private
+
+  def allowed_params
+    params.require(:todo).permit(:description)
+  end
+
+
 end
