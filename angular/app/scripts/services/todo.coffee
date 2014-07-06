@@ -18,10 +18,14 @@ angular.module('angularCoffeeApp')
         todo =
             description: attrs.description
 
-        new @service({todo}).$save (todo) ->
+        new @service(todo).$save (todo) ->
           attrs.id = todo.$id
         attrs
 
+
+      destroy: (index) ->
+        new @service(id: index).$delete (todo) ->
+          console.log('deleted todo')
 
       all: -> 
         @service.query()
