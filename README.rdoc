@@ -29,9 +29,10 @@ setup see https://github.com/cyu/rack-cors  or look in application.rb.
 Getting started:
 * checkout repo
 * bundle install
-cd angular
-bower install
-grunt test
-grunt serve
+* cd angular
+* bower install
+* npm install
+* grunt test
+* grunt serve
 
 angular app will be listening on localhost:9000 ; rails app on localhost:3000
