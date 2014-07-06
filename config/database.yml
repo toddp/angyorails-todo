@@ -3,21 +3,21 @@ test:
   encoding: utf8
   database: angyorails_test
   username: postgres
-  password: ***REMOVED***
+  password: 
 
 development:
   adapter: postgresql
   encoding: utf8
   database: angyorails_development
   username: postgres
-  password: ***REMOVED***
+  password: 
 
 production:
   adapter: postgresql
   encoding: utf8
   database: angyorails_production
   username: postgres
-  password: ***REMOVED***
+  password: 
 
 # Warning: The database defined as 'test' will be erased and
 # re-generated from your development database when you run 'rake'.

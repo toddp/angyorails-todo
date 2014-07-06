@@ -1,28 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a todo-list sample app that combines Angular.js, Yeoman generator, 
+and Rails.  
 
-Things you may want to cover:
+The app is based on several different tutorials, including: 
+http://yeoman.io/codelab.html
+https://shellycloud.com/blog/2013/10/how-to-integrate-angularjs-with-rails-4
+http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html
 
-* Ruby version
+Some notes: 
 
-* System dependencies
+* cross-domain requests 
+  CORS was needed to support cross-domain requests. It's possible to setup Angular
+to proxy requests to your rails app instead, if you like. For more info on CORS 
+setup see https://github.com/cyu/rack-cors  or look in application.rb. 
 
-* Configuration
+* angular modules
+  Bower is used to install angular modules; this app adds to the basic 
+  Yeoman-generated app the following modules: 
+    * angular-route
+    * angular-ui-sortable 
+    * ng-resource (may not be needed)
+    * angular-resource
 
-* Database creation
+    It is unclear to me whether ng-resource is absolutely needed, or if
+    angular-resource is sufficient. 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
