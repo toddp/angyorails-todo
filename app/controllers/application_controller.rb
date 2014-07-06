@@ -5,11 +5,4 @@ class ApplicationController < ActionController::Base
   #skip_before_action :verify_authenticity_token
   respond_to :html, :json
 
-  after_filter :set_access_control_headers
-
-  def set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = 'http://localhost:9000'
-    headers['Access-Control-Request-Method'] = '*'
-  end
-
 end

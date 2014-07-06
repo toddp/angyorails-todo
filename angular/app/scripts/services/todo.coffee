@@ -15,7 +15,10 @@ angular.module('angularCoffeeApp')
         console.log('Todo factory')
 
       create: (attrs) -> 
-        new @service(todo: attrs).$save (todo) ->
+        todo =
+            description: attrs.description
+
+        new @service({todo}).$save (todo) ->
           attrs.id = todo.$id
         attrs
 

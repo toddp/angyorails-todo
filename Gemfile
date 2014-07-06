@@ -45,6 +45,8 @@ gem 'ng-rails'
 gem 'ng-rails-csrf'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'rack-cors', require: 'rack/cors'
+
 
 group :development, :test do
   gem 'rspec'
