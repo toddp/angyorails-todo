@@ -22,5 +22,6 @@ angular.module('angularCoffeeApp')
       $scope.todo = ''
       console.log($scope.todos)
 
-    $scope.removeTodo = (index) ->
+    $scope.removeTodo = (todo, index) ->
       $scope.todos.splice(index, 1)
+      $scope.todosrv.destroy(todo)
