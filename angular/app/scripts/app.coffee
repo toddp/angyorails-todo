@@ -11,6 +11,7 @@
 angular
   .module('angularCoffeeApp', [
     'ngRoute'
+    'ngResource'
     'ngAnimate'
     'ngCookies'
     'ngSanitize'
@@ -19,13 +20,16 @@ angular
   ])
 
   .config(['$httpProvider', ($httpProvider) ->
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    #$httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
+    #set up CORS...
+    $httpProvider.defaults.useXDomain = true
+    delete $httpProvider.defaults.headers.common['X-Requested-With']
   ])
   .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
       .when('/about', { templateUrl: '../views/about.html', controller: 'AboutCtrl' } )
     
     #default route
-    $routeProvider.otherwise({ templateUrl: 'views/main.html', controller: 'Maintrl' } )
+    $routeProvider.otherwise({ templateUrl: 'views/main.html', controller: 'MainCtrl' } )
     console.log('router started')
   ])
