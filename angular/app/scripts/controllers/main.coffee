@@ -17,11 +17,12 @@ angular.module('angularCoffeeApp')
 
     $scope.addTodo = ->
       console.log($scope.todo)
-      $scope.todosrv.create($scope.todo)
-      $scope.todos.push($scope.todo)
+      newTodo = $scope.todosrv.create($scope.todo)
+      $scope.todos.push(newTodo)
+      console.log("newTodo: ", newTodo)
       $scope.todo = ''
       console.log($scope.todos)
 
     $scope.removeTodo = (todo, index) ->
-      $scope.todos.splice(index, 1)
       $scope.todosrv.destroy(todo)
+      $scope.todos.splice(index, 1)
