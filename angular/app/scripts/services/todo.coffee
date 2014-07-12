@@ -12,20 +12,20 @@ angular.module('angularCoffeeApp')
     class TodoService
       constructor: () ->
         @service = $resource('http://localhost:3000/todos/:id.json', {id: '@id'})
-        console.log('Todo factory')
+        #console.log('Todo factory')
 
       create: (attrs) -> 
         todo =
             description: attrs.description
 
-        new @service(todo).$save (todo) ->
-          attrs.id = todo.$id
+        new @service(todo).$save (newtodo) ->
+          attrs.id = newtodo.id
+        
         attrs
-
 
       destroy: (todo) ->
         new @service(id: todo.id).$delete (todo) ->
-          console.log('deleted todo')
+          console.log('deleted todo:' ,todo.id)
 
       all: -> 
         @service.query()
