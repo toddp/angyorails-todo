@@ -1,38 +1,38 @@
-== README
+README
+=====
 
-This is a todo-list sample app that combines Angular.js, Yeoman generator, 
-and Rails.  
+This is a todo-list sample app that combines Angular.js, Yeoman generator,
+and Rails.
 
-The app is based on several different tutorials, including: 
-http://yeoman.io/codelab.html
-https://shellycloud.com/blog/2013/10/how-to-integrate-angularjs-with-rails-4
-http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html
+The app is based on several different tutorials, including:
 
-Some notes: 
+ -  http://yeoman.io/codelab.html
+ -  https://shellycloud.com/blog/2013/10/how-to-integrate-angularjs-with-rails-4
+ -  http://asanderson.org/posts/2013/06/03/bootstrapping-angular-rails-part-1.html
 
-* cross-domain requests 
-  CORS was needed to support cross-domain requests. It's possible to setup Angular
-to proxy requests to your rails app instead, if you like. For more info on CORS 
-setup see https://github.com/cyu/rack-cors  or look in application.rb. 
+Some notes:
+
+* cross-domain requests
+  CORS was needed to support cross-domain requests. It's possible to setup Angular to proxy requests to your rails app instead, if you like. For more info on CORS setup see https://github.com/cyu/rack-cors  or look in application.rb.
 
 * angular modules
-  Bower is used to install angular modules; this app adds to the basic 
-  Yeoman-generated app the following modules: 
+  Bower is used to install angular modules; this app adds to the basic
+  Yeoman-generated app the following modules:
     * angular-route
-    * angular-ui-sortable 
+    * angular-ui-sortable
     * ng-resource (may not be needed)
     * angular-resource
 
   It is unclear to me whether ng-resource is absolutely needed, or if
   angular-resource is sufficient.
 
-Getting started:
-* checkout repo
-* bundle install
-* cd angular
-* bower install
-* npm install
-* grunt test
-* grunt serve
+Getting started
 
-angular app will be listening on localhost:9000 ; rails app on localhost:3000
+-  checkout repo
+-  bundle install
+-  cd angular
+-  bower install
+-  grunt test
+-  grunt serve
+
+angular app will be listening on http://localhost:9000 ; rails app on http://localhost:3000
